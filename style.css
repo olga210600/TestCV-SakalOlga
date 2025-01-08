@@ -1,0 +1,269 @@
+body, html {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: gray;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.8;
+}
+
+.content {
+    height: 100%;
+    width: 80%;
+    max-width: 1040px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: grid;
+    background: white;
+    grid-template-columns: 260px auto;
+    grid-template-areas:
+      'header header'
+      'menu catalog'
+      'menu catalog';
+}
+
+.header {
+    grid-area: header;
+    padding: 20px 20px 15px;
+}
+
+.header__name {
+    color: #a0bdca;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-size: clamp(24px, 2vw, 50px);
+}
+
+.header__position-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__position {
+    text-transform: uppercase;
+    font-weight: 350;
+    font-size: clamp(12px, 2vw, 18px);
+    letter-spacing: .5px;
+}
+
+.header__line {
+    flex-grow: 1;
+    position: relative;
+    height: 1em;
+}
+
+.header__line::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0 0 0;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #33647d;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu__photo {
+    width: 100%;
+    height: 260px;
+    background: #a0bdca;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu__info {
+    padding: 20px;
+}
+
+.menu__skills {
+    padding: 20px;
+}
+
+.menu__photo-frame {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/user-photo.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.menu__block-name {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.menu__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px,2vw,10px);
+}
+
+.menu__icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.menu__icon {
+    width: 18px;
+    height: 18px;
+    background-size: cover;
+}
+
+.menu__icon--phone {
+    background-image: url('images/phone.svg');
+}
+
+.menu__icon--email {
+    background-image: url('images/email.svg');
+}
+
+.menu__icon--linkedin {
+    background-image: url('images/linkedin.svg');
+}
+
+.menu__link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.menu__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+.menu__list-item::before {
+    content: '●';
+    margin-right: 8px;
+}
+
+.catalog {
+    grid-area: catalog;
+    background: white;
+    padding: 30px;
+    border-left: solid 1px black;
+    margin-left: 25px;
+}
+
+.catalog__section {
+    margin-bottom: 40px;
+}
+
+.catalog__description {
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+    font-size: 14px;
+}
+
+.catalog__title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.catalog__list {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+}
+
+.catalog__item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: start;
+}
+
+.catalog__item-title {
+    font-size: 16px;
+    font-weight: 450;
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 450;
+    text-decoration: none;
+    color: black;
+}
+
+.title:hover {
+    color: #33647d;
+}
+
+.menu__link:hover {
+    color: #7b9baa;
+}
+
+.catalog__item-date {
+    background-color: #a5c5d9;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.catalog__item-description {
+    grid-column: 1 / span 2;
+    font-weight: 300;
+}
+
+@media (max-width: 1042px) {
+    .content {
+        width: 98%;
+        grid-template-columns: 254px auto;
+    }
+}
+
+@media (max-width: 599px) {
+
+    .content {
+        width: 98%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'header'
+          'menu'
+          'catalog';
+    }
+
+    .catalog {
+        border-left: none;
+        margin-left: 0;
+    }
+
+    .menu__photo {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .menu__link {
+        font-size: 12px;
+    }
+
+    .menu__block-name {
+        font-size: 18px;
+    }
+
+    .header__line {
+        display: none;
+    }
+}
