@@ -207,6 +207,10 @@ body, html {
     color: #33647d;
 }
 
+.catalog__item-title:hover {
+    color: #33647d;
+}
+
 .menu__link:hover {
     color: #7b9baa;
 }
